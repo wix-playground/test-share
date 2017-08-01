@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# music: http://ogp.me/ns/music#">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <meta property="fb:app_id" content="1421954124693050" />
+  <meta property="og:type"   content="music.album" />
+  <meta property="og:url"    content="Put your own URL to the object here" />
+  <meta property="og:title"  content="Sample Album" />
+  <meta property="og:image"  content="//static.wixstatic.com/media/c5f6a4_98825da4674e4235845e927ee1610859~mv2.jpg" />
+</head>t
+<body>
+<img src="//static.wixstatic.com/media/c5f6a4_98825da4674e4235845e927ee1610859~mv2.jpg" alt="" width="200px" >
+<button id="share"> Share</button>
+<script>
+  document.getElementById('share')
+    .addEventListener('click', function () {
+      const appId = 1421954124693050;
+      const href = 'https://wix-playground.github.io/test-share/shared.html';
+      const redirect = 'https://wix-playground.github.io/test-share/index.html';
+      const url = `https://www.facebook.com/dialog/share?
+                        app_id=${appId}
+                        &display=popup
+                        &href=${href}
+                        &redirect_uri=${encodeURIComponent(redirect)}
+                        `.replace(/\s+/g, '');
+      window.open(url);
+    })
+</script>
+</body>
+</html>
